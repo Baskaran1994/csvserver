@@ -1,0 +1,20 @@
+root@ubuntu-jammy:~/test# cat docker-compose.yaml
+version: '3'
+services:
+  master:
+    build:
+      context: .
+    ports:
+      - "8085:9300"
+    volumes:
+      - /root/test/inputFile:/csvserver/inputdata
+    environment:
+      CSVSERVER_BORDER: Orange
+    image: infracloudio/csvserver:latest
+
+  prometheus:
+    image: prom/prometheus:v2.30.3
+    ports:
+      - "9000:9090"
+    volumes:
+      - /root/test/prometheus.yml:/etc/prometheus/prometheus.yml
