@@ -1,0 +1,1 @@
+http://localhost:9000/graph?g0.expr=csvserver_records&g0.tab=0&g0.stacked=1&g0.show_exemplars=0&g0.range_input=1h
