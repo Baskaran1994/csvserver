@@ -1,0 +1,12 @@
+version: '2'
+services:
+  master:
+    build:
+	  context: .
+	volumes:
+	  - /root/test/inputFile:/csvserver/inputdata
+	environment:
+	   CSVSERVER_BORDER: Orange
+	ports:
+	  - 8085:9300	
+	image: infracloudio/csvserver:latest
